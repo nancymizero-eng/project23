@@ -1,0 +1,680 @@
+/* ==========================================
+   PROJECT 23
+   Designed with ❤️
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#05050a;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top,#ff4fa8 0%,transparent 35%),
+
+    radial-gradient(circle at bottom,#7d4dff 0%,transparent 35%),
+
+    #05050a;
+
+    z-index:-5;
+
+}
+
+/* Stars */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.18;
+
+    animation:moveStars 80s linear infinite;
+
+    z-index:-4;
+
+}
+
+@keyframes moveStars{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-1000px);
+
+    }
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff5aa5;
+
+    animation:floatHeart linear infinite;
+
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+/* Loading Screen */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#05050a;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    z-index:99999;
+
+}
+
+#loading-screen h1{
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    font-weight:500;
+
+    text-align:center;
+
+}
+
+.loader{
+
+    width:280px;
+
+    height:10px;
+
+    background:#222;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#ff4fa8,#ffb347,#7d4dff);
+
+    animation:loading 4s forwards;
+
+}
+
+@keyframes loading{
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+/* Main */
+
+#main-content{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+
+    padding:60px 0;
+
+}
+
+/* Hero */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero h2{
+
+    color:#ffc857;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    background:linear-gradient(90deg,#ffffff,#ff8cc8);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    max-width:650px;
+
+    color:#dddddd;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+}
+
+/* Button */
+
+#openBtn{
+
+    margin-top:45px;
+
+    border:none;
+
+    outline:none;
+
+    padding:18px 50px;
+
+    font-size:1.1rem;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(135deg,#ff4fa8,#7d4dff);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 15px 40px rgba(255,79,168,.35);
+
+}
+
+#openBtn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:
+
+    0 25px 60px rgba(255,79,168,.55);
+
+/* Glass Card */
+
+.card,
+.letter-card,
+.final-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.4);
+
+}
+
+/* Sections */
+
+section{
+
+    padding:100px 0;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:2.6rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+#openBtn{
+
+width:100%;
+
+}
+
+.card,
+.letter-card,
+.final-card{
+
+padding:25px;
+
+}
+
+}
+/* ==========================================
+   PART 2A
+   Password + Gallery
+==========================================*/
+
+/* ---------- PASSWORD PAGE ---------- */
+
+#password-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    width:min(500px,95%);
+    text-align:center;
+}
+
+.card h2{
+    font-size:2rem;
+    margin-bottom:30px;
+    color:#ffd6eb;
+}
+
+#password{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    font-size:1rem;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+#password::placeholder{
+    color:#cfcfcf;
+}
+
+#password:focus{
+    border:2px solid #ff66b3;
+    box-shadow:0 0 20px rgba(255,102,179,.4);
+}
+
+#unlockBtn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    background:linear-gradient(135deg,#ff4fa8,#7d4dff);
+    transition:.35s;
+}
+
+#unlockBtn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(255,79,168,.35);
+}
+
+#error{
+    margin-top:18px;
+    color:#ff9fae;
+    min-height:22px;
+}
+
+/* ---------- GALLERY ---------- */
+
+#gallery{
+    text-align:center;
+}
+
+#gallery h2{
+    font-size:2.3rem;
+    margin-bottom:45px;
+    color:#ffe3f2;
+}
+
+.gallery-container{
+    position:relative;
+    width:min(900px,100%);
+    margin:auto;
+    aspect-ratio:4/5;
+    max-height:650px;
+    border-radius:30px;
+    overflow:hidden;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transform:scale(1.08);
+    transition:opacity .8s ease,
+               transform 1.5s ease;
+}
+
+.photo.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+.gallery-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.45),
+        transparent 45%
+    );
+    pointer-events:none;
+}
+
+/* Small floating caption */
+
+.gallery-container::before{
+    content:"Beautiful Memories ❤️";
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    z-index:10;
+    padding:10px 18px;
+    border-radius:30px;  
+  padding:10px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    font-size:.95rem;
+    color:white;
+}
+
+/* ---------- Smooth Fade ---------- */
+
+@keyframes fadeZoom{
+
+    from{
+        opacity:0;
+        transform:scale(1.08);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+    #gallery h2{
+        font-size:1.8rem;
+    }
+
+    .gallery-container{
+        border-radius:20px;
+    }
+
+    .gallery-container::before{
+        font-size:.8rem;
+        left:12px;
+        bottom:12px;
+    }
+
+    .card h2{
+        font-size:1.6rem;
+    }
+
+}
+/* Wishes */
+
+#wishContainer{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+#wishContainer .card{
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+#wishContainer .card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 40px rgba(255,79,168,.3);
+
+}
+
+#wishContainer h2{
+
+margin-bottom:15px;
+
+color:#ffd56a;
+
+}
+
+#wishContainer p{
+
+line-height:1.8;
+
+color:#f3f3f3;
+
+}
+/* ===============================
+   CONFETTI
+=============================== */
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:10px;
+
+height:18px;
+
+animation:fallConfetti 4s linear forwards;
+
+z-index:9999;
+
+}
+
+@keyframes fallConfetti{
+
+0%{
+
+transform:translateY(-20px) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Final Button */
+
+#surpriseBtn{
+
+margin-top:30px;
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:1rem;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(135deg,#ff4fa8,#7d4dff);
+
+transition:.4s;
+
+}
+
+#surpriseBtn:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 20px 40px rgba(255,79,168,.4);
+
+}
+
