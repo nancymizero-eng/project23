@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project 23 ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <h1>Loading something made with ❤️...</h1>
+
+        <div class="loader">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+
+    <!-- Stars -->
+    <div class="stars"></div>
+
+    <!-- Main Container -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <h2>Happy 23rd Birthday 🎂</h2>
+
+            <h1>IRACANYE</h1>
+
+            <h1>Ketty Sabrina ❤️</h1>
+
+            <p>
+                Today is all about celebrating you.
+                I created something special,
+                just to remind you how amazing you are.
+            </p>
+
+            <button id="openBtn">
+                🎁 Open 23
+            </button>
+
+        </section>
+
+        <!-- Password Section -->
+
+        <section id="password-page">
+
+            <div class="card">
+
+                <h2>🔐 Enter The Magic Number</h2>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password">
+
+                <button id="unlockBtn">
+                    Unlock ❤️
+                </button>
+
+                <p id="error"></p>
+
+            </div>
+
+        </section>
+
+        <!-- Gallery -->
+
+        <section id="gallery">
+
+            <h2>Beautiful Memories 📸</h2>
+
+            <div class="gallery-container">
+
+                <img src="./images/photo1.jpg" class="photo active">
+
+                <img src="./images/photo2.jpg" class="photo">
+
+                <img src="./images/photo3.jpg" class="photo">
+
+                <img src="./images/photo4.jpg" class="photo">
+
+                <img src="./images/photo5.jpg" class="photo">
+
+            </div>
+
+        </section>
+
+        <!-- Love Letter -->
+
+        <section id="letter">
+
+            <div class="letter-card">
+
+                <h2>💌 A Letter For You</h2>
+
+                <p id="typingText"></p>
+
+            </div>
+
+        </section>
+
+        <!-- Wishes -->
+
+        <section id="wishes">
+
+            <h2>23 Birthday Wishes ❤️</h2>
+
+            <div id="wishContainer">
+
+            </div>
+
+        </section>
+
+        <!-- Music -->
+
+        <section class="music">
+
+            <button id="musicBtn" onclick="openSong()">
+    🎵 Our Song – Nobody Gets Me ❤️
+</button>
+
+            <audio id="song" controls>
+
+                <source
+                    src="music/nobody-gets-me.mp3"
+                    type="audio/mpeg">
+
+            </audio>
+
+        </section>
+
+        <!-- Final Surprise -->
+
+        <section id="final">
+
+            <div class="final-card">
+
+                <h1>❤️ Happy Birthday ❤️</h1>
+
+                <h2>IRACANYE Ketty Sabrina</h2>
+
+                <p>
+
+                    May your 23rd year be filled with happiness,
+                    peace,
+                    success,
+                    beautiful memories,
+                    and endless smiles.
+
+                    You deserve every beautiful thing
+                    this life has to offer.
+
+                </p>
+
+                <button id="surpriseBtn">
+
+                    🎆 One Last Surprise
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
